@@ -10,6 +10,7 @@ class Model_Tehsil extends Model_Table{
 
 		$this->addField('name');
 		$this->hasMany('Planning','tehsil_id');
+		$this->hasMany('DLCRates','tehsil_id');
 		$this->add('dynamic_model/Controller_AutoCreator');
 	}
 }
