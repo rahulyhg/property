@@ -13,6 +13,7 @@ class Model_PaymentTransaction extends Model_Table {
 		$this->addField('amount');
 		$this->addField('created_at');
 		$this->addField('deal_type')->enum(array('Sales','SalesReturn','Purchase','PurchaseReturn'));
+		$this->addField('transaction_type')->enum(array('ToPay','ToReceive'));
 		$this->addField('rate');
 		$this->addField('unit')->enum(array('Sqft','Biga'));
 
