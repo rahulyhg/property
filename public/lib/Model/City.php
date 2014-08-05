@@ -6,9 +6,9 @@ class Model_City extends Model_Table{
 	function init(){
 		parent::init();
 
-		$this->hasOne('State','state_id');
+		$this->hasOne('State','state_id')->mandatory(true);
 
-		$this->addField('name');
+		$this->addField('name')->mandatory(true);
 		$this->hasMany('Tehsil','city_id');
 		$this->add('dynamic_model/Controller_AutoCreator');
 	}

@@ -6,7 +6,7 @@ class Model_DocumentType extends Model_Table{
 	function init(){
 		parent::init();
 
-		$this->addField('name');
+		$this->addField('name')->mandatory(true);
 		$this->hasMany('PropertyDocuments','document_type_id');
 		$this->hasMany('PartyDocuments','document_type_id');
 		$this->add('dynamic_model/Controller_AutoCreator');

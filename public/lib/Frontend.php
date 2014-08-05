@@ -32,10 +32,11 @@ class Frontend extends ApiFrontend {
 
         $header_menu->addMenuItem('index',array('Home','icon'=>'home','swatch'=>'yellow'));
         $header_menu->addMenuItem('master_index',array('Masters','icon'=>'home','swatch'=>'yellow'));
-        $header_menu->addMenuItem('manage_party',array('Parties','icon'=>'home','swatch'=>'yellow'));
+        $header_menu->addMenuItem('manage_p',array('Parties','icon'=>'home','swatch'=>'yellow'));
         $header_menu->addMenuItem('manage_planning',array('Plannings','icon'=>'home','swatch'=>'yellow'));
         $header_menu->addMenuItem('manage_property',array('Properties','icon'=>'home','swatch'=>'yellow'));
-        
+        $header_menu->addMenuItem('manage_payment',array('Payments','icon'=>'money','swatch'=>'yellow'));
+        $header_menu->addMenuItem('manage_reports',array('Reports','icon'=>'printer','swatch'=>'yellow'));
         $this->today = date('Y-m-d',strtotime($this->recall('current_date',date('Y-m-d'))));
         $this->now = date('Y-m-d H:i:s',strtotime($this->recall('current_date',date('Y-m-d H:i:s'))));
 

@@ -9,7 +9,7 @@ class Model_PropertyDocuments extends Model_Table{
 		$this->hasOne('Property','property_id');
 		$this->hasOne('DocumentType','document_type_id');
 		$this->addField('name');
-		$this->add("filestore/Field_Image","image_id")->type('image');
-		$this->add('dynamic_model/Controller_AutoCreator');
+		$this->add("filestore/Field_Image","image_id");;
+		// $this->add('dynamic_model/Controller_AutoCreator');
 	}
 }

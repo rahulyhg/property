@@ -6,10 +6,8 @@ class page_manage_property extends Page {
 		parent::init();
 
 		$tabs=$this->add('Tabs');
-		$purchase=$tabs->addTabUrl('property_purchase','Purchase');
-		$purchase=$tabs->addTabUrl('property_sale','Sale');
-		$purchase=$tabs->addTabUrl('property_salereturn','SaleReturn');
-		$purchase=$tabs->addTabUrl('property_purchasereturn','PurchaseReturn');
+		$purchase=$tabs->addTabUrl('property_property','Properties');
+		$purchase=$tabs->addTabUrl('property_sale','Sales');
 		
 
 	}

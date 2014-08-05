@@ -6,8 +6,10 @@ class Model_Conversiontype extends Model_Table{
 	function init(){
 		parent::init();
 
-		$this->addField('name');
+		$this->addField('name')->mandatory(true);
 		$this->hasMany('Property','conversion_type_id');
+		$this->hasMany('ConversionTypeDocument','conversion_type_id');
+		$this->hasMany('CTDReport','conversion_type_id');
 		
 		$this->add('dynamic_model/Controller_AutoCreator');
 	}
