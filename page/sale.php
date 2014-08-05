@@ -3,8 +3,6 @@ class page_sale extends Page{
 	function init(){
 		parent::init();
 
-
-
 		$property=$this->add("Model_PaymentTransaction");
 		$property->getElement('property_id')->system(true);
 		$property->getElement('agent_id')->system(true);

@@ -79,16 +79,17 @@ class page_property_sale extends Page {
 		$form->addField('DropDown','documents')->setModel($templtes_for_this_conversion_type);
 		$form->addSubmit('Create');
 
+		$crud=$this->add('CRUD',array('allow_add'=>false));
 		if($form->isSubmitted()){
 			$ctd_report=$this->add('Model_CTDReport');
 			// throw new Exception($form['documents']);
 			$ctd_report->createNew($_GET['property_logs_id'],$form['documents']);
-			$form->js()->univ()->successMessage('Document Created Succesfully');		
+			$form->js(null,$crud->js()->reload())->univ()->successMessage('Document Created Succesfully');		
 		}
 		
-		$crud=$this->add('CRUD',array('allow_add'=>false));
 		$reports=$this->add('Model_CTDReport');
-		$reports->addCondition('property_logs_id',$_GET['property_logs_id']);	
+		$reports->addCondition('property_logs_id',$_GET['property_logs_id']);
+		// $reports->tryLoadAny();	
 		$crud->setModel($reports);
 	}
 
