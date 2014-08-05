@@ -5,7 +5,7 @@ class Model_CTDReport extends Model_Table{
 	
 	function init(){
 		parent::init();
-
+		
 		// $this->hasOne('Property','property_id');
 		$this->hasOne('ConversionTypeDocument','conversiontype_document_id');
 		$this->hasOne('PropertyLog','property_logs_id');
@@ -55,7 +55,6 @@ class Model_CTDReport extends Model_Table{
 		}
 
 		return $text;
-
 	}
 
 }	
