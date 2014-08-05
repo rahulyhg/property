@@ -37,7 +37,8 @@ class Model_CTDReport extends Model_Table{
 	function beforeSave(){
 		$property_log = $this->add('Model_PropertyLog');
 		$property_log->load($this['property_logs_id']);
-		$this['template'] = $this->replaceRecursive($property_log,$this['template'],'propertylog');
+                $prefix = '';
+		$this['template'] = $this->replaceRecursive($property_log,$this['template'],$prefix);
 	}
 
 	function replaceRecursive($model,$text, $prefix){
@@ -45,12 +46,13 @@ class Model_CTDReport extends Model_Table{
 		foreach ($model->elements as $elm) {
 			if($elm instanceof Field ){
 				echo $prefix. ' - '. $elm->short_name.' - '. $model[$elm->short_name] .'<br/>';
-				$text= str_replace('{{'.$prefix.'_'.$elm->short_name.'}}', $model[str_replace('_id', '',$elm->short_name)], $text);
+				$text= str_replace('{{'.$prefix.'_'.(str_replace('_id', '',$elm->short_name)).'}}', $model[str_replace('_id', '',$elm->short_name)], $text);
 			}
 			if ($elm instanceof Field_Reference) {
-				$prefix .= '_'.strtolower(str_replace("Model_", '', get_class($model->ref($elm->short_name))));
+				$prefix_local = $prefix . '_'.strtolower(str_replace("Model_", '', get_class($model->ref($elm->short_name))));
 				echo '<b>'.$elm->short_name.' - '. $model->ref($elm->short_name)->loaded() .'</b><br/>';
-				$text = $this->replaceRecursive($model->ref($elm->short_name),$text,$prefix);		
+				$text = $this->replaceRecursive($model->ref($elm->short_name),$text,$prefix_local);	
+                                echo $prefix_local;
 			}	
 		}
 
