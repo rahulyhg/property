@@ -9,7 +9,7 @@ class Model_CTDReport extends Model_Table{
 		$this->hasOne('PropertyLog','property_logs_id');
 		$this->hasOne('ConversionTypeDocument','conversiontype_document_id');
 		// $this->hasOne('ConversionType','conversion_type_id');
-		$this->addField('template')->type('text');
+		$this->addField('template')->type('text')->display(array('form'=>'RichText'));
 		$this->addField('created_at')->type('date')->defaultValue(date('Y-m-d'));
 		
 		$this->addHook('beforeSave',$this);
