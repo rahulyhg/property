@@ -12,7 +12,7 @@ class Model_PartyDocuments extends Model_Table{
 		$this->add("filestore/Field_Image","image_id");
 		$this->addField('submitted_on')->type('date')->defaultValue($this->api->today);
 
-		$this->add('dynamic_model/Controller_AutoCreator');
+		// $this->add('dynamic_model/Controller_AutoCreator');
 	}
 
 	

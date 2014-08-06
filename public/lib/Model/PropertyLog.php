@@ -14,7 +14,7 @@ class Model_PropertyLog extends Model_Table{
 		$this->addField('amount');
 
 		$this->hasMany('CTDReport','property_logs_id');	
-		$this->add('dynamic_model/Controller_AutoCreator');
+		// $this->add('dynamic_model/Controller_AutoCreator');
 	}
 
 	function createNew($party,$agent,$property,$action,$deal_type,$transaction_type,$amount,$other_fields,$status=null){

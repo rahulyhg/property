@@ -10,8 +10,6 @@ class page_property_property extends Page {
 		$property_model=$this->add('Model_Property');
 		// $property_model->addCondition('status','Unsold');
 
-
-		
 		if($crud->isEditing('add')){
 			$agent_field=$crud->form->addField('dropdown','agent')->setEmptyText('Please Select');
 			$agent_field->setModel('Agent');
@@ -102,7 +100,7 @@ class page_property_property extends Page {
 
 	function page_return(){
 		$this->api->stickyGET('properties_id');
-				
+			  	
 		$form=$this->add('Form');
 		$form->addField('line','return_amount')->validateNotNull();
 		$form->addSubmit('Return');
@@ -129,6 +127,5 @@ class page_property_property extends Page {
 		$documents->addCondition('property_id',$_GET['properties_id']);
 		$crud->setModel($documents);
 	}
-
-	
+		
 }

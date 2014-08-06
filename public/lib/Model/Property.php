@@ -9,6 +9,7 @@ class Model_Property extends Model_Table{
 		$this->hasOne('PropertyType','property_type_id')->mandatory(true);
 		$this->hasOne('Planning','planning_id')->mandatory(true);
 		$this->hasOne('ConversionType','conversion_type_id')->mandatory(true);
+		
 		$this->addField('name')->mandatory(true);
 		$this->addField('status')->enum(array('Sold','UnSold','Returned'))->defaultValue('UnSold');
 		$this->addField('is_legal')->type('boolean')->defaultValue(false);

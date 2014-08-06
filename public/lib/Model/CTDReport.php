@@ -6,9 +6,9 @@ class Model_CTDReport extends Model_Table{
 	function init(){
 		parent::init();
 		
-		// $this->hasOne('Property','property_id');
 		$this->hasOne('PropertyLog','property_logs_id');
 		$this->hasOne('ConversionTypeDocument','conversiontype_document_id');
+		// $this->hasOne('ConversionType','conversion_type_id');
 		$this->addField('template')->type('text');
 		$this->addField('created_at')->type('date')->defaultValue(date('Y-m-d'));
 		
@@ -20,6 +20,7 @@ class Model_CTDReport extends Model_Table{
 
 	function createNew($property_log_id,$conversiontype_report_id){
 		
+		// throw new Exception($property_logs_id);	
 		$property_log=$this->add('Model_PropertyLog');
 		$property_log->load($property_log_id);
 
