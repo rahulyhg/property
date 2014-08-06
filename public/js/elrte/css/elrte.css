@@ -299,3 +299,8 @@ table.elrte-authors td { border-bottom:1px solid #eee; }
 	width:480px;
 }
 
+.hindi{
+	border:2px solid black;
+	color:red !important;
+	font-size: 50px !important;
+}
