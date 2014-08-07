@@ -4,6 +4,7 @@ class Form_Field_RichText extends Form_Field_Text{
 	function init(){
 		parent::init();
 		$this->addClass('elrte');
+		$this->addClass('hindi');
 		$this->js()->_load('rte');
 		$this->js(true)->univ()->alertme();
 	}

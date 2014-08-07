@@ -94,6 +94,15 @@ class page_property_sale extends Page {
 		$ctd_report->addCondition('property_logs_id',$_GET['property_logs_id']);
 		$crud->setModel($ctd_report);
 
+		if($crud->grid){
+			$crud->grid->addColumn('button','print');
+
+		}
+
+		if($_GET['print']){
+			$this->js()->univ()->newWindow($this->api->url("printdocument",array('id'=>$_GET['print'],'cut_page'=>1)),null,'height=689,width=1246,scrollbar=1')->execute();
+		}
+
 		if($form->isSubmitted()){
 			// throw new Exception($form['documents']);
 			$crud->js()->reload(array('templtes_for_this_conversion_type'=>$form['documents'],'logs_id'=>$_GET['property_logs_id'],'filter'=>1))->execute();	
