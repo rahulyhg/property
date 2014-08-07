@@ -54,3 +54,6 @@ $.each({
     }
 },$.univ._import);
 
+$(document).ready(function(){
+	alert('in view');
+});

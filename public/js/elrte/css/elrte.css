@@ -298,6 +298,9 @@ table.elrte-authors td { border-bottom:1px solid #eee; }
 	height:240px;
 	width:480px;
 }
+
+/*FOR FONT CONVERSION INTO HINDI TEXT*/
 .hindi{
 	font-family:'kruti dev 010' !important;
+	font-color:red;
 }
