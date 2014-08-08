@@ -54,6 +54,3 @@ $.each({
     }
 },$.univ._import);
 
-$(document).ready(function(){
-	$('.el-rte-structure').hide();
-});
