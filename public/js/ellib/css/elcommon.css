@@ -27,3 +27,7 @@ a { outline: none; }
 .ui-widget { font-size:.9em;}
 .ui-dialog .ui-dialog-buttonpane button { padding: .1em .6em .2em .6em; }
 
+
+.hindi{
+	font-family: 'Kruti Dev 010';
+}

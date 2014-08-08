@@ -303,4 +303,12 @@ table.elrte-authors td { border-bottom:1px solid #eee; }
 .hindi{
 	font-family:'kruti dev 010' !important;
 	font-color:red;
+	padding: 40px;	
+}
+.element.style {
+	font-family:'Kruti Dev 010';
+}
+body.el-rte-structure p{
+	font-family:'kruti dev 010' !important;
+	
 }

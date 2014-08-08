@@ -47,3 +47,7 @@ select { padding: 1px; }
 /*  No image borders  */
 img, a img, :link img, :visited img { border: 0; }
 a { outline: none; }
+
+.hindi{
+	font-family: 'Kruti Dev 010';
+}

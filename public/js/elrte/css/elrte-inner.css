@@ -12,7 +12,8 @@ body.el-rte-structure p            {
 	background-image:url(../images/outline-p.png);
 	background-repeat:no-repeat;
 	background-position:right top;
-	border:1px dotted #99ccff; }
+	border:1px dotted #99ccff;
+	 }
 body.el-rte-structure div          {
 	background-image:url(../images/outline-div.png);
 	background-repeat:no-repeat;
@@ -82,4 +83,8 @@ img.elrte-webkit-hl { outline:1px dashed #777; }
   height: 0;
   clear: both;
   visibility: hidden;
+}
+
+.hindi {
+	font-family: 'Kruti Dev 010' !important;
 }
